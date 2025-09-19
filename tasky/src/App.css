@@ -67,7 +67,16 @@ button {
 }
 
 .doneButton {
+  position: absolute;
   bottom: 5px;
   left: 5px;
   color: green;
 }
+
+.deleteButton {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: red;
+}
+
