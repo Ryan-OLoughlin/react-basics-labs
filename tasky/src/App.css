@@ -48,3 +48,10 @@ div {
   color: black;
   font-style: italic;
 }
+
+.priority {
+  font-size: 1.2em;
+  margin-top: 10px;
+  font-weight: bold;
+  color: red;
+}
