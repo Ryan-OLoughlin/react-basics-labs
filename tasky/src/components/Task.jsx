@@ -6,10 +6,22 @@ const Task = (props) => {
             <p className="title">{props.title}</p>
             <p>Due: {props.deadline}</p>
             <p className="description">{props.description}</p>
-            <p className="priority">{props.priority}</p>
+            <span className={`priority ${getPriorityClass(props.priority)}`}>{props.priority}</span>
             <button className="doneButton" onClick={props.markDone}>Done</button>
             <button className="deleteButton" onClick={props.deleteTask}>Delete</button>
         </div>
     );
 }
+    const getPriorityClass = (priority) => {
+        if (!priority) return "priority-low";
+        switch (priority.toLowerCase()) {
+            case "high":
+                return "priority-high";
+            case "medium":
+                return "priority-medium";
+            case "low":
+            default:
+                return "priority-low";
+        }
+    };
 export default Task;

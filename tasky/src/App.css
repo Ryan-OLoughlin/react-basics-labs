@@ -1,3 +1,13 @@
+select[name="priority"] {
+  width: 100%;
+  padding: 8px 6px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  background: #e0e0e0;
+  font-family: inherit;
+}
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -53,7 +63,23 @@ div {
   font-size: 1.2em;
   margin-top: 10px;
   font-weight: bold;
-  color: red;
+  display: inline-block;
+  width: 100%;
+  padding: 4px 0;
+  border-radius: 4px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.priority-low {
+  background: linear-gradient(to right, #a8e063 0%, #56ab2f 100%);
+}
+.priority-medium {
+  background: linear-gradient(to right, #f7971e 0%, #ffd200 100%);
+}
+.priority-high {
+  background: linear-gradient(to right, #e53935 0%, #e35d5b 100%);
 }
 
 button {

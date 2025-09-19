@@ -15,11 +15,12 @@ function App() {
       { id: 3, title: "Tidy up", description: "Clean living room", deadline: "Today", priority: "Low", done: false } ]
     });
 
-    const [ formState, setFormState ] = useState({
-    title: "",
-    description: "",
-    deadline: ""
-    });
+  const [ formState, setFormState ] = useState({
+  title: "",
+  description: "",
+  deadline: "",
+  priority: "Low"
+  });
 
     //Handlers
     const doneHandler = (taskIndex) => {
@@ -34,25 +35,27 @@ function App() {
     setTaskState({tasks});
     } 
 
-    const formChangeHandler = (event) => {
-    let form = {...formState};
+  const formChangeHandler = (event) => {
+  let form = {...formState};
 
-    switch(event.target.name) {
-      case "title":
-          form.title = event.target.value;
-          break;
-      case "description":
-          form.description = event.target.value;
-          break;
-      case "deadline":
-          form.deadline = event.target.value;
-          break;
-      default:
-          form = formState;
-    }
-    setFormState(form);
-    console.log(formState);
-    }
+  switch(event.target.name) {
+    case "title":
+      form.title = event.target.value;
+      break;
+    case "description":
+      form.description = event.target.value;
+      break;
+    case "deadline":
+      form.deadline = event.target.value;
+      break;
+    case "priority":
+      form.priority = event.target.value;
+      break;
+    default:
+      form = formState;
+  }
+  setFormState(form);
+  }
 
     const formSubmitHandler = (event) => {
     event.preventDefault();
@@ -61,7 +64,7 @@ function App() {
     const form = {...formState};
 
     form.id = uuidv4();
-    
+    if (!form.priority) form.priority = "Low";
     tasks.push(form);
     setTaskState({tasks});
   }
